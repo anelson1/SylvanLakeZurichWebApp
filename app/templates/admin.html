@@ -1,0 +1,49 @@
+{%extends "header.html"%}
+{% from 'bootstrap/form.html' import render_form_row %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+{%block content%}
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 mx-auto my-5">
+                {%if created%}
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{name}} was registered for {{classType}}
+                </div>
+                {%elif err%}
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> Username already exists
+                </div>
+                {%endif%}
+                <div class="card mx-auto mb-5 fadein">
+                    <div class="card-body shadow-lg">
+                        <h1 class="card-title">Admin Page</h1>
+                        <div class="float-right">
+                            <form action="/logout">
+                                {{render_form_row([form.logout], button_style='outline-primary')}}
+                            </form>
+                        </div>
+                        <p class="card-text">Please enter the student you wish to register</p>
+                        <form action="/adminhandler" method="POST">
+                            {{ render_form_row([form.name]) }}
+                            {{render_form_row([form.username]) }}
+                            {{render_form_row([form.password])}}
+                            {{render_form_row([form.classType])}}
+                            {{ render_form_row([form.submit], button_style='outline-primary', row_class = 'text-center') }}
+                        </form>
+                        <div class="text-center mt-3"> <a class="btn btn-outline-primary" href="/students">Check Enrolled
+                                Students</a></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+{%endblock%}

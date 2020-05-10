@@ -1,0 +1,35 @@
+@font-face{
+	font-family: thathuntershit;
+	src: url(font/Roboto-Regular.ttf)
+}
+@font-face{
+	font-family: thathuntershititalics;
+	src: url(font/Roboto-Italic.ttf);
+	font-style: italic;
+}
+$primary: rgb(29, 57, 182);
+$secondary: #d3d3d3;
+$enable-shadows: true;
+$font-family-sans-serif: thathuntershit;
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+.bg-transdark {
+  background-color: rgba(36, 33, 33, 0.5);
+}
+.fadein { 
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+} 
+  
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
+@import "node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+
+    {% endblock %}
+
+    <title>Sylvan Program Login</title>
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Your page content -->
+    {% block content %}{% endblock %}
+
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+<footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="/">Angelo Nelson Web Solutions</a>
+    </div>
+</footer>
+
+</html>

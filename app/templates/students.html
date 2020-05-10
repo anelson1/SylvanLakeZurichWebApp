@@ -1,0 +1,35 @@
+{%extends "header.html"%}
+{% from 'bootstrap/form.html' import render_form_row %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+{%block content%}
+
+<div class="container-fluid">
+    <div class="col">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for i in studentlist%}
+          <tr>
+            <th scope="row">{{i.name}}</th>
+            <td>{{i.classType}}</td>
+            <td>{{i.username}}</td>
+            <td>{{i.password}}</td>
+          </tr>
+  
+  
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {%endblock%}
