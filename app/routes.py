@@ -25,7 +25,7 @@ def program(programname):
     if user.username == 'admin':
         return redirect(url_for("admin"))
     
-    files = os.listdir(str(os.getcwd()) + '\\app\\static\\data\Math Edge')
+    files = os.listdir(str(os.getcwd()) + '\\app\\static\\data\\' + programname)
     routeurl = programname
     print(programname)
     return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl)

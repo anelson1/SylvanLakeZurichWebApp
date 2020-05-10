@@ -4,6 +4,7 @@
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
 {% endblock %}
+{%block title%}Sylvan Login{%endblock%}
 {%block content%}
 
 <body>
@@ -17,7 +18,7 @@
                 {%endif%}
                 <div class="card mx-auto mb-5 fadein">
                     <div class="card-body shadow-lg">
-                        <h1 class="card-title">Sylvan Program Login</h1>
+                        <h1 class="card-title">Sylvan Class Login</h1>
                         <form action="/loginhandler" method="POST">
                             {{ render_form_row([form.username]) }}
                             {{render_form_row([form.password])}}

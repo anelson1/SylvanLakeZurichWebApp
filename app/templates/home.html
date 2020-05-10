@@ -4,7 +4,10 @@
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
 {% endblock %}
+{%block title%}{{name]}'s {{programname}}{%endblock%}
+
 {%block content%}
+
 
 <body>
     <div class="container-fluid fadein">
@@ -12,7 +15,7 @@
             <div class="col my-5">
                 <div class="card mx-auto mb-5 ">
                     <div class="card-body shadow-lg">
-                        <h1 class="card-title">Welcome {{name}} to your {{programname}} program</h1>
+                        <h1 class="card-title">Welcome {{name}} to your {{programname}} Program</h1>
                         <p class="card-text">Select your lesson from below and get started!</p>
                        
                     </div>
