@@ -25,7 +25,7 @@ def program(programname):
     if user.username == 'admin':
         return redirect(url_for("admin"))
     
-    files = os.listdir(str(os.getcwd()) + '\\app\\static\\data\\' + programname)
+    files = os.listdir(str(os.getcwd()) + '/app/static/data/' + programname)
     routeurl = programname
     print(programname)
     return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl)
@@ -37,7 +37,7 @@ def fileselect(programname, level):
     user = User.query.get(current_user.id)
     if user.username == 'admin':
         return redirect(url_for("admin"))
-    url = str(os.getcwd()) + '\\app\\static\\data\\'+programname + "\\"+level
+    url = str(os.getcwd()) + '/app/static/data/'+programname + "/"+level
     files = os.listdir(url)
     routeurl = url_for('fileselect',programname = programname, level = level)
     for f in files:
@@ -51,7 +51,7 @@ def fileDisplay(programname, level,filename):
     user = User.query.get(current_user.id)
     if user.username == 'admin':
         return redirect(url_for("admin"))
-    url = str(os.getcwd()) + '\\app\\static\\data\\'+programname + "\\"+level
+    url = str(os.getcwd()) + '/app/static/data/'+programname + "/"+level
     files = os.listdir(url)
     return redirect(url_for('static', filename='data/'+programname + "/" + level + "/" + filename) )
         
