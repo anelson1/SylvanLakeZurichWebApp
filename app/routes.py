@@ -26,6 +26,7 @@ def program(programname):
         return redirect(url_for("admin"))
     
     files = os.listdir(str(os.getcwd()) + '/app/static/data/' + programname)
+    files.sort()
     routeurl = programname
     print(programname)
     return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl)
@@ -39,6 +40,7 @@ def fileselect(programname, level):
         return redirect(url_for("admin"))
     url = str(os.getcwd()) + '/app/static/data/'+programname + "/"+level
     files = os.listdir(url)
+    files.sort()
     routeurl = url_for('fileselect',programname = programname, level = level)
     for f in files:
         print(routeurl + "/" + f)
