@@ -1,1 +1,1 @@
-web: gunicorn sylvan:app
+web: flask db upgrade; gunicorn sylvan:app
