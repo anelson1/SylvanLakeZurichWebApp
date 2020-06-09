@@ -19,12 +19,12 @@
                     <strong>Error!</strong> Username already exists
                 </div>
                 {%endif%}
-                <div class="card mx-auto mb-5 fadein">
-                    <div class="card-body shadow-lg">
+                <div class="card fadein shadow-lg bg-dark text-light border-primary">
+                    <div class="card-body">
                         <h1 class="card-title">Admin Page</h1>
                         <div class="float-right">
                             <form action="/logout">
-                                {{render_form_row([form.logout], button_style='outline-primary')}}
+                                {{render_form_row([form.logout], button_style='outline-light')}}
                             </form>
                         </div>
                         <p class="card-text">Please enter the student you wish to register</p>
@@ -33,9 +33,9 @@
                             {{render_form_row([form.username]) }}
                             {{render_form_row([form.password])}}
                             {{render_form_row([form.classType])}}
-                            {{ render_form_row([form.submit], button_style='outline-primary', row_class = 'text-center') }}
+                            {{ render_form_row([form.submit], button_style='outline-light', row_class = 'text-center') }}
                         </form>
-                        <div class="text-center mt-3"> <a class="btn btn-outline-primary" href="/students">Check Enrolled
+                        <div class="text-center mt-3"> <a class="btn btn-outline-light" href="/students">Check Enrolled
                                 Students</a></div>
 
 

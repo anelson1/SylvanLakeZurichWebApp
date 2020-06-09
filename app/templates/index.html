@@ -10,20 +10,32 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-5 mx-auto my-5">
+            <div class="col">
+                <div class="jumbotron bg-dark text-light text-center mx-4">
+                    <h1 class="display-4">Welcome to the Sylvan Summer Login Portal</h1>
+                    <p class="lead">Here you will find everything you need to get started on your summer learning adventure</p>
+                    <hr class="my-4">
+                    <p>Just login and start learning!</p>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mx-auto my-auto my-5">
+                
                 {%if uErr%}
                 <div class="alert alert-danger">
-                    <strong>Error!</strong> Your username or password is incorrect, please try again
+                    <strong>Error!</strong> Your username or password is incorrect, please try again or contact your teacher
                 </div>
                 {%endif%}
-                <div class="card mx-auto mb-5 fadein">
-                    <div class="card-body shadow-lg">
-                        <h1 class="card-title">Sylvan Class Login</h1>
+                <div class="card fadein shadow-lg bg-dark text-light border-primary">
+                    <h1 class="card-header mb-1">Login</h1>
+                    <div class="card-body">
+                       
                         <form action="/loginhandler" method="POST">
                             {{ render_form_row([form.username]) }}
                             {{render_form_row([form.password])}}
                             {{ render_form_row([form.remember]) }}
-                            {{ render_form_row([form.submit], button_style='outline-primary', row_class = 'text-center') }}
+                            {{ render_form_row([form.submit], button_style='outline-light', row_class = 'text-center') }}
                         </form>
                     </div>
                 </div>
