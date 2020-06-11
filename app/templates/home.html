@@ -10,16 +10,36 @@
 
 
 <body>
-    <div class="container-fluid fadein">
+    <div class="container-fluid fadein mt-2">
         <div class="row">
-            <div class="col my-5">
+            <div class="col">
                 <div class="card fadein shadow-lg bg-dark text-light border-primary">
                     <div class="card-body">
                         <h1 class="card-title">Welcome {{name}} to your {{programname}} Program</h1>
                         <p class="card-text">Select your lesson from below and get started!</p>
-                       
+                        <form action="/logout">
+                            {{render_form_row([form.logout], button_style='outline-light')}}
+                        </form>
                     </div>
                 </div>
+            </div>
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mt-4 bg-dark border">
+              <li class="breadcrumb-item"><a class="text-light" href="/">Home</a></li>
+              
+
+              {% if program and folder %}
+              <li class="breadcrumb-item"><a class="text-light" href="/{{program}}">{{program}}</a></li>
+              <li class="breadcrumb-item active" aria-current="/{{program}}/{{folder}}">{{folder}}</li>
+              {% elif program %}
+              <li class="breadcrumb-item active" aria-current="/{{program}}">{{program}}</li>
+              {%endif%}
+
+            </ol>
+          </nav>
+        <div class="row">
+            <div class="col">
                 <div class="list-group mb-5 ">
                     {%for f in files%}
                   <a href="{{routeurl + '/' +f}}" class="list-group-item bg-dark text-light list-group-item-action">
@@ -27,9 +47,7 @@
                   </a>
                   {%endfor%}
                 </div>
-                <form action="/logout">
-                    {{render_form_row([form.logout], button_style='outline-light')}}
-                </form>
+               
             </div>
         </div>
     </div>

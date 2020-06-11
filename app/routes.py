@@ -29,7 +29,7 @@ def program(programname):
     files.sort()
     routeurl = programname
     print(programname)
-    return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl)
+    return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl, program = programname)
 
 @app.route("/<programname>/<level>")
 @login_required
@@ -44,7 +44,7 @@ def fileselect(programname, level):
     routeurl = url_for('fileselect',programname = programname, level = level)
     for f in files:
         print(routeurl + "/" + f)
-    return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl)
+    return render_template("home.html", form=form, name=user.name, programname=user.classType, files=files, routeurl = routeurl, program = programname, folder = level)
 
 @app.route("/<programname>/<level>/<filename>")
 @login_required
