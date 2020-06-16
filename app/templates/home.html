@@ -20,6 +20,10 @@
                         <form action="/logout">
                             {{render_form_row([form.logout], button_style='outline-light')}}
                         </form>
+                        {% if program  == "Level 3"%}
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7OmUgrXzIyi56s0FR3F2Q1qUmEUbSps7nxNf-VeYBEUYLYQ/viewform?usp=sf_link">Click here to submit answers for lessons 1-3></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxieoZz_4BKzUBaxC2wuqF-zpNAEvdu0XqcIYm86OOuNCa1g/viewform?usp=sf_link">Click here to submit answers for lessons 4-6></a>
+                        {%endif%}
                     </div>
                 </div>
             </div>
@@ -27,7 +31,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-4 bg-dark border">
               <li class="breadcrumb-item"><a class="text-light" href="/">Home</a></li>
-              
+
 
               {% if program and folder %}
               <li class="breadcrumb-item"><a class="text-light" href="/{{program}}">{{program}}</a></li>
@@ -47,7 +51,7 @@
                   </a>
                   {%endfor%}
                 </div>
-               
+
             </div>
         </div>
     </div>
